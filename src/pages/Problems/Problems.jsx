@@ -38,14 +38,14 @@ function Problems() {
     navigateToDetails(randomProblemId);
   };
   const navigateToDetails = useCallback((problemId) => {
-    if(userData?.idToken || userData?.registered){
-      console.log('yes');
+    // if(userData?.idToken || userData?.registered){
+    //   console.log('yes');
+    // navigate(`/problems/${problemId}`);
+    // }else{
+    //   console.log('not');
+    //   navigate('/login')
+    // }
     navigate(`/problems/${problemId}`);
-    }else{
-      console.log('not');
-      navigate('/login')
-    }
-   
 
   }, [navigate,userData]);
   return (

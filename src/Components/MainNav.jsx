@@ -1,10 +1,12 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { logout } from "../features/AuthSlice";
 
 function MainNav() {
   const { userData } = useSelector((state) => state.userInfo);
-  console.log(Object.keys(userData).length > 0);
+
+  const dispatch = useDispatch();
 
   return (
     <div className="navbar px-2 md:px-40  fixed text-whiteText z-20 shadow-xl bg-bgTransparent">
@@ -63,7 +65,7 @@ function MainNav() {
           </li>
 
           <li>
-            <a>FAQ</a>
+            <NavLink to="faq">FAQ</NavLink>
           </li>
         </ul>
       </div>
@@ -101,7 +103,7 @@ function MainNav() {
                 <a>Settings</a>
               </li>
               <li>
-                <a>Logout</a>
+                <a onClick={()=>dispatch(logout())}>Logout</a>
               </li>
             </ul>
           </div>

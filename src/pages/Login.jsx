@@ -25,8 +25,6 @@ function Login() {
     },
     validationSchema:loginSchema,
     onSubmit: (values)=>{
-     
-      console.log(values);
       dispatch(loginAction(values)).then((res)=>{
         if (res?.error?.message) {
           toast.error(res?.payload);

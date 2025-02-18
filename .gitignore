@@ -10,7 +10,8 @@
 
 # production
 /build
-
+# Ignore all MP4 videos
+*.mp4
 # misc
 .DS_Store
 .env.local

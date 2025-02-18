@@ -28,6 +28,10 @@ function Timer() {
     }
     return () => clearInterval(timer);
   }, [playTimer]);
+
+
+
+  
   const formatTime = (secs) => {
     const minutes = Math.floor(secs / 60);
     const remainingSeconds = secs % 60;
